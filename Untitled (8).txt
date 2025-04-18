@@ -1,0 +1,85 @@
+import React from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+
+const features = [
+  {
+    title: "Flood Prediction",
+    description: "AI দিয়ে আগাম বন্যার পূর্বাভাস ও এলার্ট",
+    icon: "🌊",
+  },
+  {
+    title: "Smart Farming",
+    description: "কৃষকের জন্য AI-ভিত্তিক ফসল চাষ পরামর্শ",
+    icon: "🌾",
+  },
+  {
+    title: "Urban Heat Mapping",
+    description: "তাপমাত্রা বিশ্লেষণ করে গাছ লাগানোর পরামর্শ",
+    icon: "🔥",
+  },
+  {
+    title: "Waste Management",
+    description: "বর্জ্য শনাক্ত ও অপ্টিমাইজড রিসাইক্লিং রুট",
+    icon: "🗑️",
+  },
+  {
+    title: "Cyclone Relief Planning",
+    description: "AI দিয়ে ঘূর্ণিঝড় পূর্বাভাস ও সাহায্য প্রস্তুতি",
+    icon: "🌀",
+  },
+  {
+    title: "Air Quality Monitoring",
+    description: "IoT + AI দিয়ে বায়ু দূষণ পর্যবেক্ষণ ও সতর্কতা",
+    icon: "🌫️",
+  },
+  {
+    title: "AI Farming & Weather Alert",
+    description: "আজকের আবহাওয়ার ভিত্তিতে সেরা ফসল ও চাষের পরামর্শ",
+    icon: "🌦️",
+  },
+  {
+    title: "Climate Quiz Challenge",
+    description: "উত্তর দাও, পয়েন্ট পাও, নতুন ব্যাজ আনলক করো!",
+    icon: "🎯",
+  },
+  {
+    title: "Voice AI (Bangla)",
+    description: "বাংলায় কথা বলো, AI উত্তর দেবে তোমার সমস্যার",
+    icon: "🗣️",
+  },
+];
+
+export default function Home() {
+  return (
+    <main className="p-6 max-w-6xl mx-auto">
+      <section className="text-center mb-10">
+        <h1 className="text-4xl font-bold mb-4">AI-NirapodBangladesh 360°</h1>
+        <p className="text-lg mb-4 text-gray-600">
+          এক বাংলাদেশ, এক AI প্ল্যাটফর্ম – জলবায়ু ও দুর্যোগ সমাধানে প্রযুক্তির ব্যবহার
+        </p>
+        <button className="bg-green-600 text-white px-4 py-2 rounded-xl shadow">
+          Explore Platform
+        </button>
+      </section>
+
+      <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {features.map((feature, index) => (
+          <motion.div
+            key={index}
+            whileHover={{ scale: 1.05 }}
+            className="hover:shadow-xl transition duration-300"
+          >
+            <Card className="rounded-2xl shadow-md p-4">
+              <CardContent>
+                <div className="text-4xl mb-2">{feature.icon}</div>
+                <h2 className="text-xl font-semibold mb-1">{feature.title}</h2>
+                <p className="text-gray-500 text-sm">{feature.description}</p>
+              </CardContent>
+            </Card>
+          </motion.div>
+        ))}
+      </section>
+    </main>
+  );
+}
